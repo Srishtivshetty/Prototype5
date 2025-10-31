@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public bool isGameActivate;
+    public Button restartButton;
     private int score;
     private float spawnRate = 1.0f;
     // Start is called before the first frame update
@@ -48,9 +50,11 @@ public class GameManager : MonoBehaviour
         gameOverText.gameObject.SetActive(true);
         isGameActivate = false;
         Debug.Log("Game Over!");
+        restartButton.gameObject.SetActive(true);
     }
        public void RestartGame()
     {
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
