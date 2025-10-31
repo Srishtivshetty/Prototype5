@@ -17,12 +17,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isGameActivate = true;
-        StartCoroutine(SpawnTarget());
-        score = 0;
-        UpdateScore(0);
-        
-       
         
     }
 
@@ -52,9 +46,16 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over!");
         restartButton.gameObject.SetActive(true);
     }
-       public void RestartGame()
+    public void RestartGame()
     {
-        
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void StartGame()
+    {
+        isGameActivate = true;
+        score = 0;
+        StartCoroutine(SpawnTarget());
+        UpdateScore(0);
     }
 }
