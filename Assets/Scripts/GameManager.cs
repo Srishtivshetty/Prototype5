@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -42,10 +43,14 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score:" + score;
 
        }
-       public void GameOver()
-       {
+    public void GameOver()
+    {
         gameOverText.gameObject.SetActive(true);
         isGameActivate = false;
-         Debug.Log("Game Over!");
-       }
+        Debug.Log("Game Over!");
+    }
+       public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
