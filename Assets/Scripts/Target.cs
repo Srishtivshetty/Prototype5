@@ -16,7 +16,7 @@ public class Target : MonoBehaviour
         targetRb = GetComponent<Rigidbody>();
         targetRb.AddForce(RandomForce(), ForceMode.Impulse);
         targetRb.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);
-        transform.position = RandomSpawnPos;
+        transform.position = RandomSpawnPos();
     }
 
     // Update is called once per frame
